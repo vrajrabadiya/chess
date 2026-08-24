@@ -1,0 +1,455 @@
+/* Play You Modal Styles matching Retro-Industrial Dark Theme */
+
+.playyou-modal {
+  position: relative;
+  width: 90vw;
+  max-width: 420px;
+  background: #18181b; /* dark bg */
+  border: 1px solid #27272a; /* border color */
+  border-radius: 16px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  animation: scale-up-smooth 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+@keyframes scale-up-smooth {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.playyou-title {
+  font-family: var(--font-title);
+  font-size: 1.4rem;
+  font-weight: 800;
+  margin: 0 0 20px 0;
+  color: #ffffff;
+  letter-spacing: -0.5px;
+  text-align: center;
+  border-bottom: 1px solid #27272a;
+  padding-bottom: 12px;
+}
+
+.playyou-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.playyou-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.playyou-label {
+  font-family: var(--font-title);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #a1a1aa;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.playyou-select,
+.playyou-input {
+  background: #27272a;
+  border: 1px solid #3f3f46;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-family: var(--font-title);
+  font-size: 0.9rem;
+  color: #ffffff;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.playyou-select:focus,
+.playyou-input:focus {
+  border-color: #22c55e;
+  box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.2);
+}
+
+.playyou-sides {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 8px;
+}
+
+.playyou-side-btn {
+  background: #27272a;
+  border: 1px solid #3f3f46;
+  border-radius: 8px;
+  padding: 10px;
+  font-family: var(--font-title);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #d4d4d8;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.playyou-side-btn:hover {
+  background: #3f3f46;
+  color: #ffffff;
+}
+
+.playyou-side-btn.active {
+  background: rgba(34, 197, 94, 0.12);
+  border-color: #22c55e;
+  color: #22c55e;
+  box-shadow: 0 0 8px rgba(34, 197, 94, 0.15);
+}
+
+.playyou-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.playyou-btn {
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-family: var(--font-title);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+}
+
+.playyou-btn.primary {
+  background: #22c55e;
+  border: 1px solid #22c55e;
+  color: #18181b;
+}
+
+.playyou-btn.primary:hover {
+  background: #4ade80;
+  border-color: #4ade80;
+  box-shadow: 0 4px 12px rgba(34, 197, 94, 0.25);
+}
+
+.playyou-btn.secondary {
+  background: transparent;
+  border: 1px solid #3f3f46;
+  color: #ffffff;
+}
+
+.playyou-btn.secondary:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: #52525b;
+}
+
+/* Loading spinner and status display */
+.playyou-loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 0;
+}
+
+.playyou-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(34, 197, 94, 0.15);
+  border-top-color: #22c55e;
+  border-radius: 50%;
+  animation: playyou-spin 0.8s linear infinite;
+}
+
+@keyframes playyou-spin {
+  to { transform: rotate(360deg); }
+}
+
+.playyou-status {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: #a1a1aa;
+  text-align: center;
+  margin: 0;
+  line-height: 1.5;
+  word-break: break-word;
+}
+
+.playyou-cancel-btn {
+  width: 100%;
+  margin-top: 8px;
+}
+
+/* Progress bar */
+.playyou-progress-track {
+  width: 100%;
+  height: 6px;
+  background: #27272a;
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.playyou-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #16a34a, #22c55e, #4ade80);
+  border-radius: 99px;
+  transition: width 0.4s ease;
+  box-shadow: 0 0 8px rgba(34, 197, 94, 0.4);
+}
+
+.playyou-progress-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: #22c55e;
+  letter-spacing: 0.5px;
+  margin-top: -4px;
+}
+
+/* ── SVG circular progress ring ──────────────────────────────── */
+.playyou-ring-wrap {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.playyou-ring {
+  width: 80px;
+  height: 80px;
+  transform: rotate(-90deg);
+}
+
+.playyou-ring-track {
+  fill: none;
+  stroke: #27272a;
+  stroke-width: 6;
+}
+
+.playyou-ring-fill {
+  fill: none;
+  stroke: url(#ringGrad);
+  stroke: #22c55e;
+  stroke-width: 6;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.4s ease;
+  filter: drop-shadow(0 0 4px rgba(34, 197, 94, 0.5));
+}
+
+.playyou-ring-pct {
+  position: absolute;
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #22c55e;
+  letter-spacing: -0.5px;
+}
+
+/* ── Saved bots section ───────────────────────────────────────── */
+.playyou-saved-section {
+  margin-top: 20px;
+  border-top: 1px solid #27272a;
+  padding-top: 16px;
+}
+
+.playyou-saved-heading {
+  font-family: var(--font-title);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #a1a1aa;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0 0 12px 0;
+}
+
+.playyou-saved-empty {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: #52525b;
+  text-align: center;
+  padding: 8px 0 4px;
+  margin: 0;
+}
+
+/* Optional label hint */
+.playyou-label-hint {
+  font-weight: 400;
+  color: #52525b;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+/* ── Bot card grid ────────────────────────────────────────────── */
+.playyou-bot-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  gap: 10px;
+}
+
+.playyou-bot-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  background: #27272a;
+  border: 1px solid #3f3f46;
+  border-radius: 10px;
+  padding: 10px 6px 8px;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  text-align: center;
+}
+
+.playyou-bot-card:hover {
+  background: #3f3f46;
+  border-color: #22c55e;
+  box-shadow: 0 0 10px rgba(34, 197, 94, 0.15);
+  transform: translateY(-2px);
+}
+
+.playyou-bot-card:active {
+  transform: translateY(0);
+}
+
+/* Rounded-square DiceBear avatar (48×48, rounded-xl) */
+.playyou-bot-avatar-sq {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: #27282b;
+  border: 1px solid rgba(255,255,255,0.08);
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.playyou-bot-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: opacity 0.2s ease;
+}
+
+.playyou-bot-name {
+  font-family: var(--font-title);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #e4e4e7;
+  max-width: 72px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.playyou-bot-platform {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  color: #71717a;
+  max-width: 72px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ── Modal scroll when content is tall ───────────────────────── */
+.playyou-modal {
+  max-height: 90vh;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #3f3f46 transparent;
+}
+
+/* ── Nickname + Gender side-by-side row ──────────────────────── */
+.playyou-nick-gender-row {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.playyou-nick-field {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.playyou-gender-field {
+  flex: 0 0 auto;
+}
+
+/* ── Gender / Avatar-Style toggle ────────────────────────────── */
+.playyou-gender-toggle {
+  display: flex;
+  gap: 4px;
+}
+
+.playyou-gender-btn {
+  width: 34px;
+  height: 38px; /* matches .playyou-input height */
+  background: #27272a;
+  border: 1px solid #3f3f46;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #a1a1aa;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.18s ease;
+  padding: 0;
+  line-height: 1;
+}
+
+.playyou-gender-btn:hover {
+  background: #3f3f46;
+  color: #ffffff;
+}
+
+.playyou-gender-btn.active {
+  background: rgba(34, 197, 94, 0.12);
+  border-color: #22c55e;
+  color: #22c55e;
+  box-shadow: 0 0 6px rgba(34, 197, 94, 0.2);
+}
+
+/* ── Bot card wrapper (positions the delete button) ──────────── */
+.playyou-bot-card-wrap {
+  position: relative;
+}
+
+/* ── Hover-reveal delete (✕) button ─────────────────────────── */
+.playyou-bot-delete {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #ef4444;
+  border: 1.5px solid #18181b;
+  color: #ffffff;
+  font-size: 0.55rem;
+  font-weight: 900;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  transform: scale(0.7);
+  transition: opacity 0.15s ease, transform 0.15s ease;
+  z-index: 10;
+  padding: 0;
+}
+
+.playyou-bot-card-wrap:hover .playyou-bot-delete {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.playyou-bot-delete:hover {
+  background: #dc2626;
+  transform: scale(1.1);
+}

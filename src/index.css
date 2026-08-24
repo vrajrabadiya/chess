@@ -1,0 +1,95 @@
+:root {
+  /* Font Families - Clean Apple-style System Typography */
+  --font-title: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: 'SF Mono', ui-monospace, Menlo, Monaco, Consolas, monospace;
+  --font-sans: var(--font-title);
+
+  /* Apple Glassmorphism Design Tokens blended with Chess.com Warm Charcoal colors */
+  --glass-bg: rgba(38, 36, 33, 0.65);
+  --glass-bg-hover: rgba(255, 255, 255, 0.08);
+  --glass-bg-active: rgba(255, 255, 255, 0.12);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-border-light: rgba(255, 255, 255, 0.15);
+  --glass-blur: blur(24px) saturate(180%);
+  --glass-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+  --glass-shadow-soft: 0 4px 16px rgba(0, 0, 0, 0.25);
+  --radius-xl: 12px; /* Chess.com style flatter/cleaner corners */
+  --radius-lg: 8px;
+  --radius-md: 6px;
+  
+  /* Smooth Apple Transition Timing */
+  --transition-smooth: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+  --transition-fast: all 0.18s cubic-bezier(0.25, 1, 0.5, 1);
+
+  /* Chess.com Classic Green Board Aesthetics */
+  --board-light: #eeeed2;
+  --board-dark: #769656;
+  --board-highlight: rgba(247, 247, 133, 0.5); /* Chess.com soft yellow move highlight */
+  --board-highlight-opaque: rgba(247, 247, 133, 0.85); /* Chess.com selection highlight */
+  
+  /* Premium Chess.com Colors & Accents */
+  --bg-primary: #302e2b; /* Chess.com warm dark theme background */
+  --bg-secondary: #262421; /* Chess.com warm sidebar dark background */
+  --text-primary: #ffffff;
+  --text-muted: #bab9b7; /* Chess.com warm light gray */
+  
+  /* Theme Accents (Matches Chess.com Green style) */
+  --theme-glow: #81b64c;
+  --theme-glow-rgb: 129, 182, 76;
+  --theme-glow-semi: rgba(129, 182, 76, 0.1);
+  --theme-glow-bright: rgba(129, 182, 76, 0.85);
+  
+  /* Status Colors */
+  --color-victory: #81b64c;
+  --color-defeat: #b33939;
+  --color-draw: #7f8c8d;
+
+  font-family: var(--font-sans);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg-primary);
+  overflow-x: hidden;
+  font-family: var(--font-sans);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+/* Custom Scrollbar Styles for Elegant Apple Look */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 99px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  transition: var(--transition-fast);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
