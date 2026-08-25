@@ -7,7 +7,7 @@ import torch
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect, BackgroundTasks
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-
+from typing import Optional
 from engine import MirrorEngine
 from model import train_user_model_to_target
 
@@ -228,4 +228,9 @@ async def train_clone_endpoint(req: TrainRequest):
     # Otherwise, queue background training
     background_tasks.add_task(run_training_job, user_key)
     return {"status": "training", "cached": False}
+
+class TrainRequest(BaseModel):
+    username: str
+    platform: Optional[str] = "chess.com"
+    max_games: Optional[int] = 500
     
